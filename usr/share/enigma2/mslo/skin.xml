@@ -108,7 +108,7 @@
       <convert type="EventTime">Progress</convert>
     </widget>
     <!-- EVENT Now 	-->
-    <widget source="session.Event_Now" render="Label" zPosition="2" position="350,552" size="65,29" halign="right" font="Ubuntu; 26" backgroundColor="Dark" transparent="1">
+    <widget source="session.Event_Now" render="Label" zPosition="2" position="350,552" size="70,29" halign="right" font="Ubuntu; 26" backgroundColor="Dark" transparent="1">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
