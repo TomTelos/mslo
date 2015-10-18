@@ -1,11 +1,18 @@
 <skin>
-  <!-- MSLO v0.6 -->
+  <!-- MSLO v0.7 -->
   <!-- autor: w4l4 -->
-  <!-- Szkielet wyjściowy: PKT Silver skin for PKT by Father Pio -->
-  <!-- Nie udostępniać i nie edytować bez poinformowania autora -->
-  <!-- Wszelkie pytania proszę zadawać na forum dvhk w wątku skórki mslo -->
+  <!-- Chcesz udostępnić? Zmienić? - Zapytaj mnie -->
+  <!-- Wszelkie pytania proszę zadawać na forum dvhk w wątku skórki mslo lub pm na forum dvhk-->
   <!-- Copyright 2015 w4l4 -->
   <!-- Testowana na OpenPli 8.6 dla nBox -->
+  <!-- Może nie działać na innych obrazach -->
+  <!-- MSLO v0.7 -->
+  <!-- by: w4l4 -->
+  <!-- Do you want to change it? Share it? - Ask me first -->
+  <!-- Any questions please ask on dvhk forum on mslo topic or pm me on dvhk forum-->
+  <!-- Copyright 2015 w4l4 -->
+  <!-- Tested on OpenPli 8.6 for nBox -->
+  <!-- May not work on other images -->
   <output id="0">
     <resolution xres="1280" yres="720" bpp="32" />
   </output>
@@ -34,10 +41,10 @@
     <font filename="Ubuntu-R.ttf" name="Ubuntu" scale="100" />
   </fonts>
   <windowstyle type="skinned" id="0">
-    <title offset="30,20" font="Ubuntu;24" />
-    <color name="Background" color="black" />
+    <title offset="33,20" font="UbuntuBold;30" />
+    <color name="Background" color="Dark" />
     <color name="LabelForeground" color="white" />
-    <color name="ListboxBackground" color="black" />
+    <color name="ListboxBackground" color="Dark" />
     <color name="ListboxForeground" color="white" />
     <color name="ListboxSelectedBackground" color="Dark" />
     <color name="ListboxSelectedForeground" color="white" />
@@ -45,8 +52,8 @@
     <color name="ListboxMarkedForeground" color="white" />
     <color name="ListboxMarkedAndSelectedBackground" color="Dark" />
     <color name="ListboxMarkedAndSelectedForeground" color="red" />
-    <color name="WindowTitleForeground" color="Bright" />
-    <color name="WindowTitleBackground" color="Dark" />
+    <color name="WindowTitleForeground" color="white" />
+    <color name="WindowTitleBackground" color="gray" />
     <borderset name="bsWindow">
       <pixmap pos="bpTopLeft" filename="mslo/frames/bs_tl.png" />
       <pixmap pos="bpTop" filename="mslo/frames/bs_t.png" />
@@ -61,7 +68,7 @@
   <windowstyle type="skinned" id="1">
     <color name="Background" color="black" />
     <color name="LabelForeground" color="white" />
-    <color name="ListboxBackground" color="black" />
+    <color name="ListboxBackground" color="Dark" />
     <color name="ListboxForeground" color="white" />
     <color name="ListboxSelectedBackground" color="black" />
     <color name="ListboxSelectedForeground" color="white" />
@@ -69,15 +76,15 @@
     <color name="ListboxMarkedForeground" color="white" />
     <color name="ListboxMarkedAndSelectedBackground" color="black" />
     <color name="ListboxMarkedAndSelectedForeground" color="white" />
-    <color name="WindowTitleForeground" color="Bright" />
-    <color name="WindowTitleBackground" color="Dark" />
+    <color name="WindowTitleForeground" color="white" />
+    <color name="WindowTitleBackground" color="gray" />
   </windowstyle>
   <screen name="InfoBar" position="center,15" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
     <ePixmap pixmap="mslo/infobar.png" position="1,512" size="1280,172" zPosition="-9" alphatest="blend" />
     
     <widget source="session.CurrentService" render="Picon" position="40,370" size="220,132" zPosition="10" transparent="1" alphatest="blend">
-         <convert type="ServiceName">Reference</convert>
-   </widget>
+      <convert type="ServiceName">Reference</convert>
+    </widget>
  
     <eLabel position="1052,10" size="0,110" backgroundColor="white" />
     <ePixmap pixmap="mslo/clk_bkg.png" zPosition="0" position="826,42" size="350,110" alphatest="on" />
@@ -85,7 +92,7 @@
       <convert type="ClockToText">Format:%A</convert>
     </widget>
     <widget source="global.CurrentTime" render="Label" position="843,95" size="133,38" font="Ubuntu; 18" backgroundColor="Bright" shadowColor="Bright" shadowOffset="-2,-2" transparent="0" zPosition="1" valign="center" halign="center">
-      <convert type="ClockToText">Format:%e %B</convert>
+      <convert type="ClockToText">Format:%d %B</convert>
     </widget>
     <widget source="global.CurrentTime" render="Label" position="976,61" size="187,72" font="Ubuntu; 50" backgroundColor="Dark" shadowColor="Bright" shadowOffset="-2,-2" transparent="0" zPosition="1" valign="center" halign="center">
       <convert type="ClockToText">Default</convert>
@@ -206,7 +213,7 @@
   </screen>
   <screen name="menu_mainmenu" position="830,0" size="400,720" title="Main menu" backgroundColor="transparent" flags="wfNoBorder"> 
     <widget source="title" render="Label" position="0,90" size="388,36" font="Ubuntu;30" halign="center" valign="center" foregroundColor="white" backgroundColor="Bright" transparent="1" />
-     <eLabel text="mslo skin v. 0.6 by w4l4" position="0,125" size="388,20" halign="center" valign="center" font="Ubuntu; 12" foregroundColor="White" backgroundColor="Dark" transparent="1" />
+     <eLabel text="mslo skin v. 0.7 by w4l4" position="0,125" size="388,20" halign="center" valign="center" font="Ubuntu; 12" foregroundColor="White" backgroundColor="Dark" transparent="1" />
     <ePixmap position="0,0" zPosition="-10" size="388,720" pixmap="mslo/menu/menubar.png" transparent="1" />
    <widget source="menu" render="Listbox" position="0,171" size="388,450" zPosition="3" selectionPixmap="mslo/menu/select.png" scrollbarMode="showNever" transparent="1">
       <convert type="TemplatedMultiContent">
@@ -302,7 +309,7 @@
     </widget>
   </screen>
   <screen name="ServiceInfo" position="320,200" size="600,360" title="Serviceinfo">
-    <widget name="infolist" position="20,20" size="600,300" selectionDisabled="1" scrollbarMode="showOnDemand" />
+    <widget name="infolist" position="20,20" size="600,300" selectionDisabled="1" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <widget name="red" position="0,325" size="150,25" font="UbuntuBold;18" halign="center" valign="center" foregroundColor="red" />
     <widget name="green" position="150,325" size="150,25" font="UbuntuBold;18" halign="center" valign="center" foregroundColor="green" />
     <widget name="yellow" position="300,325" size="150,25" font="UbuntuBold;18" halign="center" valign="center" foregroundColor="yellow" />
@@ -342,49 +349,49 @@
     <widget source="key_red" render="Label" position="820,525" size="250,30" font="Ubuntu;24" halign="center" valign="center" foregroundColor="red" transparent="1" backgroundColor="Dark"  />
   </screen>
   <screen name="BouquetSelector" position="390,150" size="500,380" title="Choose bouquet">
-    <widget name="menu" position="20,20" size="460,325" scrollbarMode="showOnDemand" />
+    <widget name="menu" position="20,20" size="460,325" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
   </screen>
   <screen name="ChannelContextMenu" position="340,150" size="600,300" title="Channellist menu">
-    <widget name="menu" position="20,20" size="560,260" scrollbarMode="showOnDemand" />
+    <widget name="menu" position="20,20" size="560,260" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
   </screen>
   <screen name="ChannelSelection" position="80,100" size="1120,560" title=" " backgroundColor="transparent">
   <ePixmap position="0,0" zPosition="-10" size="1120,560" pixmap="mslo/epg_bkg.png" />
     <ePixmap pixmap="mslo/icons/clock.png" position="10,10" zPosition="1" size="30,30" alphatest="on" />
-    <widget source="global.CurrentTime" render="Label" position="45,10" zPosition="1" size="90,30" font="Ubuntu; 25" halign="left" transparent="1" foregroundColor="Bright" backgroundColor="black">
+    <widget source="global.CurrentTime" render="Label" position="45,10" zPosition="1" size="90,30" font="Ubuntu; 25" halign="left" transparent="1" foregroundColor="Bright" backgroundColor="Dark">
       <convert type="ClockToText" />
     </widget>
-    <widget name="list" position="450,0" size="670,513" scrollbarMode="showOnDemand" colorServiceDescription="Bright" colorServiceDescriptionSelected="Bright" colorEventProgressbarBorder="Bright" scrollbarWidth="10" scrollbarSliderBorderWidth="1" scrollbarSliderForegroundColor="Bright" scrollbarSliderBorderColor="Bright" colorEventProgressbarBorderSelected="Bright" EventProgressbarBorderWidth="1" picServiceEventProgressbar="mslo/slider_small.png" selectionPixmap="mslo/menu/select.png" backgroundColorSelected="Dark" foregroundColorServiceNotAvail="Dark" enableWrapAround="1" serviceItemHeight="40" serviceNumberFont="Ubuntu;20" serviceNameFont="Ubuntu;20" serviceInfoFont="Ubuntu;18" backgroundColor="Dark" transparent="1"/>
+    <widget name="list" position="450,0" size="670,513" scrollbarMode="showOnDemand" colorServiceDescription="Bright" colorServiceDescriptionSelected="Bright" colorEventProgressbarBorder="Bright" colorEventProgressbarBorderSelected="Bright" EventProgressbarBorderWidth="1" picServiceEventProgressbar="mslo/slider_small.png" selectionPixmap="mslo/menu/select.png" backgroundColorSelected="Dark" foregroundColorServiceNotAvail="Dark" enableWrapAround="1" serviceItemHeight="40" serviceNumberFont="Ubuntu;22" serviceNameFont="Ubuntu;22" serviceInfoFont="Ubuntu;20" backgroundColor="Dark" transparent="1"/>
     <widget source="ServiceEvent" render="Label" position="125,11" zPosition="1" size="300,28" font="Ubuntu;25" halign="left" foregroundColor="Bright" backgroundColor="Dark" transparent="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="31,50" zPosition="1" size="400,20" font="Ubuntu;18" transparent="1" halign="Center">
+    <widget source="ServiceEvent" render="Label" position="31,50" zPosition="1" size="400,20" font="Ubuntu;18" transparent="1" foregroundColor="white" backgroundColor="Dark" halign="Center">
       <convert type="EventName">Name</convert>
     </widget>
     <widget source="ServiceEvent" render="Progress" position="100,83" zPosition="1" pixmap="mslo/slider_small.png" backgroundColor="Dark" size="210,12" borderWidth="1" borderColor="Bright">
       <convert type="EventTime">Progress</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="20,78" zPosition="1" size="60,18" font="Ubuntu;18" transparent="1" halign="right">
+    <widget source="ServiceEvent" render="Label" position="20,78" zPosition="1" size="60,18" font="Ubuntu;18" foregroundColor="white" backgroundColor="Dark" transparent="1" halign="right">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget source="ServiceEvent" render="Label" position="335,78" zPosition="1" size="70,18" font="Ubuntu;18" transparent="1" halign="left">
+    <widget source="ServiceEvent" render="Label" position="335,78" zPosition="1" size="70,18" font="Ubuntu;18" foregroundColor="white" backgroundColor="Dark" transparent="1" halign="left">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget render="msloMaggyRunningText" source="ServiceEvent" options="movetype=running,startpoint=0,direction=top,steptime=200,step=2,repeat=2,startdelay=6000,wrap" position="10,115" zPosition="1" halign="left" size="430,285" font="Ubuntu;20" backgroundColor="Dark" transparent="1" foregroundColor="Bright">
+    <widget render="msloMaggyRunningText" source="ServiceEvent" options="movetype=running,startpoint=0,direction=top,steptime=200,step=2,repeat=2,startdelay=6000,wrap" position="10,115" zPosition="1" halign="left" size="430,285" font="Ubuntu;20" backgroundColor="Dark" transparent="1" foregroundColor="white">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>   
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/blue.png" zPosition="1" position="820,526" size="250,30" alphatest="on" />
-    <widget name="key_red" zPosition="2" position="40,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
-    <widget name="key_green" zPosition="2" position="300,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
-    <widget name="key_yellow" zPosition="2" position="560,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
-    <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
+    <widget name="key_red" zPosition="2" position="40,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="Dark" />
+    <widget name="key_green" zPosition="2" position="300,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="Dark" />
+    <widget name="key_yellow" zPosition="2" position="560,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="Dark" />
+    <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="Dark" />
     <!-- Next events -->
-    <eLabel text="Następnie: " position="10,420" size="120,20" halign="left" font="UbuntuBold; 18" foregroundColor="Bright" backgroundColor="black" transparent="1" />
-    <widget alphatest="blend" render="msloEventListDisplay" position="10,445" size="430,60" source="ServiceEvent" rowHeight="15" column0="0,55,white,UbuntuBold,18,0,0" column1="80,545,Bright,UbuntuBold,18,0,1" primetimeoffset="10">
+    <eLabel text="Następnie: " position="10,420" size="120,25" halign="left" font="Ubuntu; 22" foregroundColor="Bright" backgroundColor="Dark" transparent="1" />
+    <widget alphatest="blend" render="msloEventListDisplay" position="10,450" size="430,60" source="ServiceEvent" rowHeight="15" backgroundColor="Dark" transparent="1" column0="0,55,white,Ubuntu,20,0,0" column1="80,545,Bright,Ubuntu,20,0,1" primetimeoffset="10">
       <convert type="msloEventList">primetime=yes,eventcount=1</convert>
     </widget>   
   </screen>
@@ -432,7 +439,8 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 
 		</applet>
   </screen>
-  <screen name="Console" position="90,100" size="1100,560" title="Command execution...">
+  <screen name="Console" position="90,100" size="1100,560" title="Command execution..." backgroundColor="transparent">
+  <ePixmap position="0,0" zPosition="-10" size="1100,560" pixmap="mslo/epg_bkg.png" />
     <widget name="text" position="20,20" size="1060,520" font="Ubuntu;20" />
   </screen>
   <screen name="clockDisplay" position="420,230" size="340,300">
@@ -501,20 +509,20 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <eLabel text="Następnie:" zPosition="2" position="10,380" size="120,25" halign="center" font="Ubuntu; 20" foregroundColor="Dark" backgroundColor="Bright"/>
-    <widget source="session.Event_Next" render="Label" position="268,380" size="600,25" zPosition="2" halign="left" font="Ubuntu;20" foregroundColor="Dark" backgroundColor="Bright">
+    <eLabel text="Następnie:" zPosition="2" position="10,380" size="120,25" halign="center" font="Ubuntu; 20" foregroundColor="white" backgroundColor="Bright"/>
+    <widget source="session.Event_Next" render="Label" position="268,380" size="600,25" zPosition="2" halign="left" font="Ubuntu;20" foregroundColor="Dwhite" backgroundColor="Bright">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Next" render="Label" zPosition="2" position="128,380" size="65,25" halign="right" font="Ubuntu;20" foregroundColor="Dark" backgroundColor="Bright">
+    <widget source="session.Event_Next" render="Label" zPosition="2" position="128,380" size="65,25" halign="right" font="Ubuntu;20" foregroundColor="white" backgroundColor="Bright">
       <convert type="EventTime">StartTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <eLabel text=" - " zPosition="1" position="180,380" size="35,25" halign="center" font="Ubuntu; 20" foregroundColor="Dark" backgroundColor="Bright" />
-    <widget source="session.Event_Next" render="Label" zPosition="2" position="203,380" size="65,25" halign="left" font="Ubuntu;20" foregroundColor="Dark" backgroundColor="Bright">
+    <eLabel text=" - " zPosition="1" position="180,380" size="35,25" halign="center" font="Ubuntu; 20" foregroundColor="white" backgroundColor="Bright" />
+    <widget source="session.Event_Next" render="Label" zPosition="2" position="203,380" size="65,25" halign="left" font="Ubuntu;20" foregroundColor="white" backgroundColor="Bright">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget name="epg_description" position="10,65" size="860,320" font="Ubuntu;20" backgroundColor="Dark" foregroundColor="Bright" transparent="1" />
+    <widget name="epg_description" position="10,65" size="860,320" font="Ubuntu;20" backgroundColor="Dark" foregroundColor="white" transparent="1" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="35,435" size="200,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="240,435" size="200,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="445,435" size="200,30" alphatest="on" />
@@ -580,7 +588,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <eLabel text="help..." position="450,63" size="740,50" font="UbuntuBold;40" halign="center" backgroundColor="black" transparent="1" />
     <widget name="rc" position="150,105" size="154,500" pixmaps="mslo/rc.png,mslo/rcold.png" zPosition="10" alphatest="on" />
     <widget name="long_key" position="80,585" size="300,30" font="UbuntuBold;24" halign="center" foregroundColor="Bright" backgroundColor="black" transparent="1" />
-    <widget name="list" position="450,140" size="740,494" scrollbarMode="showOnDemand" />
+    <widget name="list" position="450,140" size="740,494" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="mslo/arrowdown.png" zPosition="11" alphatest="on" />
     <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="mslo/arrowdown.png" zPosition="11" alphatest="on" />
     <widget name="arrowup" position="-100,-100" size="37,70" pixmap="mslo/arrowup.png" zPosition="11" alphatest="on" />
@@ -619,16 +627,16 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     </widget>
   </screen>
   <screen name="MovieContextMenu" position="340,180" size="600,400" title="Movielist menu">
-    <widget name="menu" position="20,20" size="560,360" scrollbarMode="showOnDemand" />
+    <widget name="menu" position="20,20" size="560,360" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
   </screen>
   <screen name="MovieLocationBox" position="90,100" size="1100,560">
     <widget name="text" position="10,10" size="1080,27" font="UbuntuBold;23" />
     <eLabel position="10,50" size="20,27" backgroundColor="darkgrey" />
     <widget name="target" position="30,50" size="1060,27" valign="center" font="UbuntuBold;24" foregroundColor="black" backgroundColor="darkgrey" />
-    <widget name="filelist" position="30,85" zPosition="1" size="1060,230" scrollbarMode="showOnDemand" selectionDisabled="1" />
+    <widget name="filelist" position="30,85" zPosition="1" size="1060,230" scrollbarMode="showOnDemand" selectionDisabled="1" selectionPixmap="mslo/menu/select.png" />
     <eLabel position="10,345" size="20,27" backgroundColor="darkgrey" />
     <widget name="textbook" position="30,345" size="1060,27" valign="center" font="UbuntuBold;24" foregroundColor="black" backgroundColor="darkgrey" />
-    <widget name="booklist" position="30,380" zPosition="2" size="1060,125" scrollbarMode="showOnDemand" />
+    <widget name="booklist" position="30,380" zPosition="2" size="1060,125" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <eLabel position="0,518" size="1100,2" backgroundColor="grey" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
@@ -645,7 +653,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
       <convert type="MovieInfo">FileSize</convert>
     </widget>
     <widget name="waitingtext" position="10,0" size="760,475" zPosition="4" font="UbuntuBold;22" halign="center" valign="center" />
-    <widget name="list" position="10,0" size="760,475" scrollbarMode="showOnDemand" />
+    <widget name="list" position="10,0" size="760,475" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <widget source="Service" render="Label" position="790,0" zPosition="1" size="300,50" font="UbuntuBold;24" halign="center" foregroundColor="Bright">
       <convert type="MovieInfo">RecordServiceName</convert>
     </widget>
@@ -669,7 +677,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
   </screen>
   <screen name="NameserverSetup" position="90,100" size="1100,560" title="Nameserver Setup">
-    <widget name="config" position="20,20" size="740,375" scrollbarMode="showOnDemand" />
+    <widget name="config" position="20,20" size="740,375" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <widget source="introduction" render="Label" position="20,470" size="740,30" zPosition="10" font="UbuntuBold;24" halign="center" transparent="1" />
     <widget source="key_red" render="Label" position=" 200,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="red" />
     <widget source="key_green" render="Label" position="470,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="green" />
@@ -678,7 +686,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="NetworkAdapterSelection" position="90,100" size="1100,560" title="Select Network Adapter" backgroundColor="transparent">
   <ePixmap position="0,0" zPosition="-10" size="1100,560" pixmap="mslo/epg_bkg.png" />
     <!-- <widget name="list" position="20,20" size="740,375" scrollbarMode="showOnDemand" /> -->
-    <widget source="list" render="Listbox" position="20,20" size="740,375" zPosition="10" scrollbarMode="showOnDemand">
+    <widget source="list" render="Listbox" position="20,20" size="740,375" zPosition="10" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png">
       <convert type="TemplatedMultiContent">
         <!--  iface, name, description, interfacepng, defaultpng, activepng, divpng  -->
 				{"template": [
@@ -726,7 +734,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget source="key_yellow" render="Label" position="820,525" size="250,30" font="Ubuntu;24" halign="center" valign="center" foregroundColor="yellow" backgroundColor="dark" transparent="1" />
   </screen>
   <screen name="NimSelection" position="340,250" size="600,222" title="Choose Tuner">
-    <widget source="nimlist" render="Listbox" position="0,0" size="600,220">
+    <widget source="nimlist" render="Listbox" position="0,0" size="600,220" selectionPixmap="mslo/menu/select.png">
       <convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (10, 5), size = (560, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
@@ -741,8 +749,9 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="NimSetup" position="340,134" size="600,502" title="Reception Settings">
     <widget name="config" position="10,12" size="580,475" />
   </screen>
-  <screen name="NumberZap" position="540,355" size="200,70" title="Channel">
-    <widget name="number" position="0,0" size="200,70" valign="center" halign="center" font="Ubuntu;48" zPosition="2" foregroundColor="Bright" backgroundColor="Dark"/>
+  <screen name="NumberZap" position="540,355" size="200,70" title="Channel" backgroundColor="transparent">
+  <ePixmap position="0,0" zPosition="-10" size="200,70" pixmap="mslo/epg_bkg.png" />
+    <widget name="number" position="0,0" size="200,70" valign="center" halign="center" font="Ubuntu;50" zPosition="2" foregroundColor="Bright" backgroundColor="Dark" transparent="1"/>
   </screen>
   <screen name="NumericalTextInputHelpDialog" position="338,480" zPosition="2" size="604,124" backgroundColor="carbon" flags="wfNoBorder">
     <widget name="key1" position="2,2" size="200,40" font="Ubuntu;19" halign="center" valign="center" />
@@ -768,11 +777,11 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     </screen>
   <screen name="PluginDownloadBrowser" position="240,134" size="800,492" title="Downloadable plugins">
     <widget name="text" position="20,30" size="760,50" font="UbuntuBold;23" />
-    <widget name="list" position="0,0" size="801,452" scrollbarMode="showOnDemand" />
+    <widget name="list" position="0,0" size="801,452" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
   </screen>
   <screen name="Setup" position="190,100" size="900,560" title="Setup" backgroundColor="transparent">
   <ePixmap position="0,0" zPosition="-10" size="900,560" pixmap="mslo/epg_bkg.png" />
-    <widget name="config" position="20,65" size="860,425" scrollbarMode="showOnDemand" />
+    <widget name="config" position="20,65" size="860,425" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <eLabel text="Anuluj" position="40,526" size="250,30" halign="center" valign="center" font="Ubuntu; 16" foregroundColor="white" backgroundColor="Dark" transparent="1" />
@@ -782,7 +791,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="key_green" zPosition="2" position="300,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
     </screen>
   <screen name="SimpleChannelSelection" position="90,100" size="1100,560" title="Channel Selection">
-    <widget name="list" position="10,20" size="1080,475" scrollbarMode="showOnDemand" />
+    <widget name="list" position="10,20" size="1080,475" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
@@ -794,7 +803,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   </screen>
   <screen name="Standby" position="0,0" size="1280,720" title="Standby" />
   <screen name="SubservicesQuickzap" position="380,600" size="560,100" title="Subservices" backgroundColor="transparent" flags="wfNoBorder">
-    <widget backgroundColor="red" font="Ubuntu; 14" foregroundColor="white" valign="center" halign="center" position="450,0" render="FixedLabel" size="200,40" source="session.RecordState" text="NAGRYWANIE" transparent="0" zPosition="5">
+    <widget backgroundColor="red" font="Ubuntu; 14" foregroundColor="white" valign="center" halign="center" position="35,60" render="FixedLabel" size="200,40" source="session.RecordState" text="NAGRYWANIE" transparent="0" zPosition="5">
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
     <eLabel text="Subservices" position="0,0" size="560,28" font="UbuntuBold;20" halign="center" valign="center" backgroundColor="black" />
@@ -804,7 +813,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     </widget>
   </screen>
   <screen name="Subtitles" position="390,234" size="500,302" title="Subtitle selection">
-    <widget name="config" position="20,20" zPosition="1" size="460,280" scrollbarMode="showOnDemand" />
+    <widget name="config" position="20,20" zPosition="1" size="460,280" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
   </screen>
   <screen name="SubtitleDisplay" position="280,110" size="720,576" zPosition="-1" flags="wfNoBorder" backgroundColor="transparent" />
   <screen name="TimerEdit" position="90,100" size="1100,560" title="Timer Edit">
@@ -816,7 +825,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="apply" position="210,240" size="250,35" />
   </screen>
   <screen name="TimerEditList" position="90,100" size="1100,560" title="Timer Editor">
-    <widget name="timerlist" position="10,20" size="1080,350" scrollbarMode="showOnDemand" />
+    <widget name="timerlist" position="10,20" size="1080,350" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png"/>
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
@@ -827,14 +836,14 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
    </screen>
   <screen name="TimerEntry" position="90,100" size="1100,560" title="Timer entry">
-    <widget name="config" position="10,20" size="1080,350" scrollbarMode="showOnDemand" />
+    <widget name="config" position="10,20" size="1080,350" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="canceltext" position=" 20,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="red" />
     <widget name="oktext" position="290,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="green" />
     <widget name="cancel" position="0,0" size="0,0" />
     <widget name="ok" position="0,0" size="0,0" />
   </screen>
   <screen name="TimerLog" position="90,100" size="1100,560" title="Timer log">
-    <widget name="loglist" position="10,10" size="1080,350" scrollbarMode="showOnDemand" />
+    <widget name="loglist" position="10,10" size="1080,350" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="logentry" position="10,380" size="1080,130" font="UbuntuBold;20" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
@@ -846,7 +855,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
   </screen>
   <screen name="TimerSanityConflict" position="90,100" size="1100,560" title="Timer sanity error">
-    <widget name="list" position="10,10" size="1080,250" scrollbarMode="showOnDemand" />
+    <widget name="list" position="10,10" size="1080,250" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="timer1" position="10,45" size="530,225" scrollbarMode="showNever" />
     <widget name="timer2" position="560,45" size="530,225" scrollbarMode="showNever" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
@@ -859,21 +868,21 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="key_blue" zPosition="2" position="820,526" size="250,30" font="Ubuntu;16" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="black" />
   </screen>
   <screen name="TimerSelection" position="90,100" size="1100,560" title="Timer selection">
-    <widget name="timerlist" position="10,20" size="1080,350" scrollbarMode="showOnDemand" />
+    <widget name="timerlist" position="10,20" size="1080,350" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
   </screen>
   <screen name="VideoFinetune" position="0,0" size="1280,720" backgroundColor="black">
     <widget source="Canvas" render="Canvas" position="280,70" size="720,576" />
   </screen>
   <screen name="Menu" position="340,134" size="600,502" title="Main menu">
     <widget source="title" render="Label" position="10,10" size="580,35" font="UbuntuBold;27" halign="center" />
-    <widget source="menu" render="Listbox" position="10,55" size="580,450" scrollbarMode="showOnDemand">
+    <widget source="menu" render="Listbox" position="10,55" size="580,450" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" >
       <convert type="StringList" />
     </widget>
   </screen>
   <screen name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder">
     <eLabel position="80,125" size="300,420" zPosition="1" backgroundColor="grey" />
     <eLabel position="81,126" size="298,418" zPosition="2" backgroundColor="black" />
-    <widget name="Cutlist" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" />
+    <widget name="Cutlist" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <eLabel position="479,124" zPosition="3" size="696,377" backgroundColor="transparent" />
     <widget name="Video" position="270,100" zPosition="-10" size="390,300" />
     <widget source="session.CurrentService" render="Label" position="450,510" size="790,30" zPosition="3" font="UbuntuBold;24" halign="center" valign="center" backgroundColor="black" transparent="1">
@@ -890,9 +899,9 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <eLabel text="M e d i a  P l a y e r" position="48,40" size="290,32" zPosition="1" font="Ubuntu;28" foregroundColor="Bright" backgroundColor="black" />
     <ePixmap pixmap="mslo/menu/media_player.png" position="0,0" size="1280,720" zPosition="-1" alphatest="on" />
     <eLabel text="F i l e l i s t" position="312,72" size="556,26" zPosition="5" font="Ubuntu;22" halign="center" foregroundColor="Bright" backgroundColor="black" transparent="1" />
-    <widget name="filelist" position="357,110" size="510,205" scrollbarMode="showOnDemand" />
+    <widget name="filelist" position="357,110" size="510,205" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <eLabel text="P l a y l i s t" position="412,358" size="556,26" zPosition="5" font="Ubuntu;22" halign="center" foregroundColor="Bright" backgroundColor="black" transparent="1" />
-    <widget name="playlist" position="430,398" size="510,230" scrollbarMode="showOnDemand" selectionDisabled="1" />
+    <widget name="playlist" position="430,398" size="510,230" scrollbarMode="showOnDemand" selectionDisabled="1" selectionPixmap="mslo/menu/select.png" />
     <widget name="artist" position="80,407" size="300,20" font="Ubuntu;16" valign="center" foregroundColor="Bright" transparent="1" />
     <widget name="title" position="80,467" size="300,20" font="Ubuntu;16" valign="center" foregroundColor="Bright" transparent="1" />
     <widget name="album" position="80,527" size="300,20" font="Ubuntu;16" valign="center" foregroundColor="Bright" transparent="1" />
@@ -900,7 +909,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="CDInfo" position="90,100" size="1100,560" title="CDInfo">
     <widget name="info" position="20,20" size="260,200" font="UbuntuBold;21" transparent="1" />
     <widget name="info2" position="20,240" size="260,260" font="UbuntuBold;21" transparent="1" />
-    <widget name="config" position="320,20" size="760,475" zPosition="3" scrollbarMode="showOnDemand" />
+    <widget name="config" position="320,20" size="760,475" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
@@ -917,7 +926,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="slider" position="10,190" size="580,20" borderWidth="1" transparent="1" />
   </screen>
   <screen name="WebIfConfigScreen" position="90,100" size="1100,560" title="Main Setup">
-    <widget name="config" position="10,20" size="1080,475" scrollbarMode="showOnDemand" />
+    <widget name="config" position="10,20" size="1080,475" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="key_red" position=" 20,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="red" />
     <widget name="key_green" position="290,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="green" />
     <widget name="key_yellow" position="560,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="yellow" />
@@ -928,12 +937,12 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="ssl" position="180,20" size="50,50" font="UbuntuBold;20" halign="left" transparent="1" />
     <widget name="auth" position="240,20" size="200,50" font="UbuntuBold;20" halign="left" transparent="1" />
     <widget name="disabled" position="440,20" size="180,50" font="UbuntuBold;20" halign="left" transparent="1" />
-    <widget name="ifacelist" position="10,80" size="800,350" zPosition="3" scrollbarMode="showOnDemand" />
+    <widget name="ifacelist" position="10,80" size="800,350" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="key_red" position="20,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="red" />
     <widget name="key_yellow" position="560,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="yellow" />
   </screen>
   <screen name="WebIfInterfaceConfigScreen" position="90,100" size="1100,560" title="edit Interface">
-    <widget name="config" position="10,20" size="1080,475" scrollbarMode="showOnDemand" />
+    <widget name="config" position="10,20" size="1080,475" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
@@ -945,7 +954,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   </screen>
   <!-- DVD Burn -->
   <screen name="ProjectSettings" position="90,100" size="1100,560" title="Collection settings">
-    <widget name="config" position="10,10" size="1080,350" scrollbarMode="showOnDemand" />
+    <widget name="config" position="10,10" size="1080,350" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget source="info" render="Label" position="10,380" size="1080,100" font="UbuntuBold;20" />
     <widget source="key_red" render="Label" position=" 20,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="red" />
     <widget source="key_green" render="Label" position="290,525" size="250,30" font="UbuntuBold;24" halign="center" valign="center" foregroundColor="green" />
@@ -965,7 +974,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="TitleList" position="90,100" size="1100,560" title="DVD Tool">
     <widget source="title_label" render="Label" position="10,20" size="1080,45" font="UbuntuBold;22" />
     <widget name="error_label" position="10,20" size="1080,395" zPosition="3" font="UbuntuBold;20" />
-    <widget source="titles" render="Listbox" position="10,100" size="1080,360" scrollbarMode="showOnDemand">
+    <widget source="titles" render="Listbox" position="10,100" size="1080,360" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png">
       <convert type="StaticMultiList" />
     </widget>
     <widget source="space_bar" render="Progress" position="10,480" size="1080,26" borderWidth="1" backgroundColor="grey" />
@@ -982,7 +991,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="TitleCutter" position="0,0" size="1280,720" title="Cutlist editor" flags="wfNoBorder">
     <eLabel position="80,125" size="300,420" zPosition="1" backgroundColor="grey" />
     <eLabel position="81,126" size="298,418" zPosition="2" backgroundColor="black" />
-    <widget name="Cutlist" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" />
+    <widget name="Cutlist" position="90,135" size="280,400" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <eLabel position="479,124" zPosition="3" size="696,377" backgroundColor="transparent" />
     <widget name="Video" position="270,100" zPosition="-10" size="390,300" />
     <widget source="session.CurrentService" render="Label" position="450,510" size="790,30" zPosition="3" font="UbuntuBold;24" halign="center" valign="center" backgroundColor="black" transparent="1">
@@ -997,7 +1006,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="TitleProperties" position="90,100" size="1100,560" title="Properties of current title">
     <widget name="thumbnail" position="20,20" size="260,160" alphatest="on" />
     <widget source="ServiceInfo" render="Label" position="320,20" size="740,160" font="UbuntuBold;21" backgroundColor="Dark" transparent="1" />
-    <widget name="config" position="20,210" size="1060,300" scrollbarMode="showOnDemand" />
+    <widget name="config" position="20,210" size="1060,300" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <ePixmap pixmap="mslo/buttons/red.png" zPosition="1" position="40,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/green.png" zPosition="1" position="300,526" size="250,30" alphatest="on" />
     <ePixmap pixmap="mslo/buttons/yellow.png" zPosition="1" position="560,526" size="250,30" alphatest="on" />
@@ -1045,7 +1054,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <!-- DivXplayer -->
   <screen name="DivXPlayer" position="70,70" size="580,475" title="DivX Player">
     <ePixmap pixmap="mslo/icons/mp_buttons.png" position="454,450" size="108,13" alphatest="on" />
-    <widget name="filelist" position="15,15" size="550,420" scrollbarMode="showOnDemand" />
+    <widget name="filelist" position="15,15" size="550,420" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png" />
     <widget name="currenttext" position="0,0" size="0,0" />
   </screen>
   <screen name="WlanStatus" position="90,100" size="1100,560" title="Wireless Network State">
@@ -1077,7 +1086,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <eLabel position="0,0" size="1100,2" backgroundColor="grey" />
     <widget source="info" render="Label" position="20,20" size="740,25" zPosition="10" font="UbuntuBold;22" transparent="1" />
     <eLabel position="20,55" size="740,2" backgroundColor="grey" />
-    <widget source="list" render="Listbox" position="20,70" size="740,420" scrollbarMode="showOnDemand">
+    <widget source="list" render="Listbox" position="20,70" size="740,420" scrollbarMode="showOnDemand" selectionPixmap="mslo/menu/select.png">
       <convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (740, 30), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the essid
